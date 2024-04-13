@@ -1,0 +1,31 @@
+<div class="container py-3">
+  <header>
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Cheap Products ({{cheapProducts.length}})</h1>
+      <p class="fs-5 text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reiciendis fugiat repellendus facere rerum qui eius possimus est dolore earum!</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <ng-container *ngFor="let row of cheapProducts">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <img [src]="row.image" alt="">
+            <div class="card-body">
+              <h4 class="card-title pricing-card-title">{{row.title}}</h4>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Price: <strong>{{row.price | currency}}</strong></li>
+                <li>Rating: <span class="badge rounded-pill text-bg-success">{{row.rating.rate}}</span></li>
+                <li>Email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+  </main>
+</div>
